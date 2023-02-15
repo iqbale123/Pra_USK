@@ -27,7 +27,7 @@
                         <td>{{ $p->judul }}</td>
                         <td>{{ $p->isi }}</td>
                         <td>{{ $p->status }}</td>
-                        <td>{{ $p->tanggal_kirim }}</td>
+                        <td>{{ $p->tgl_kirim }}</td>
                         {{-- <td>{{ $p->denda }}</td> --}}
                     </tr>
                 @endforeach

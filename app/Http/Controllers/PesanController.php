@@ -70,7 +70,7 @@ class PesanController extends Controller
             'judul' => $request->judul,
             'isi' => $request->isi,
             'status' => 'terkirim',
-            'tgl_kirim' => Carbon::now()
+            'tgl_kirim' => now()
         ]);
 
         return redirect()->back();

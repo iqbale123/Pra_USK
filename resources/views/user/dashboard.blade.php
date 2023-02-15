@@ -2,50 +2,51 @@
 @section('content')
 
 <div class="row">
-
-    @foreach ($kategori as $k)
-
-    <div class="col-12">
-
-        <p><span class="badge bg-primary">{{ $k->nama }}</span></p>
-
-        <div class="row d-flex flex-row flex-nowrap overflow-auto">
-
-            @foreach ($k->bukus as $buku)
+    <div class="container">
+        <div class="row">
+            @foreach ($pemberitahuan as $p)
+                <div class="alert alert-warning alert-dismissible fade show">
+                    <strong>Selamat datang! </strong>{{ $p->isi }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endforeach
 
 
-            <div class="col-xl-3 col-md-3 col-sm-3">
-                <div class="card">
-
+            @foreach ($buku as $b)
+                <div class="col-4">
+                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                     <div class="card-content">
+                        <img src="/assets/images/samples/banana.jpg" class="card-img-top img-fluid" alt="singleminded"/>
                         <div class="card-body">
-
-                            <h5 class="card-title">{{ $buku->judul }}</h5>
-                            <p class="card-text">
-                            <div>{{ $buku->judul }}</div>
-                            <div>{{ $buku->pengarang }}</div>
-                            <div>{{ $buku->penerbit->nama }}</div>
-                            </p>
+                            <h3 style="min-height: 28px"><b>{{ $b->judul }}</b></h3>
+                                @if ($b->kategori->nama == 'Umum')
+                                    <span class="badge rounded-pill text-bg-danger">{{ $b->kategori->nama }}</span>
+                                @elseif($b->kategori->nama == 'Fiksi')
+                                    <span class="badge rounded-pill text-bg-success">{{ $b->kategori->nama }}</span>
+                                @else($b->kategori->nama == 'Sejarah')
+                                    <span class="badge rounded-pill text-bg-secondary">{{ $b->kategori->nama }}</span>
+                                @endif
+                                <div class="row" style="padding-top:20px;">
+                                    <div class="col-6" >
+                                        <p class="text-start">
+                                            <b>Pengarang</b><br>
+                                            {{ $b->pengarang }}
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="text-end">
+                                            <b>Penerbit</b><br>
+                                            {{ $b->penerbit->nama }}
+                                        </p>
+                                    </div>
+                                </div>
                         </div>
                     </div>
-                    <div class="card-footer d-flex justify-content-between border-0">
-                        <form action="{{ route('user.peminjaman.form') }}" method="POST">
-
-                            @csrf
-
-                            <input type="hidden" value="{{$k->id}}" name="buku_id">
-                            <button class="btn btn-primary" type="submit">Pinjam</button>
-                        </form>
-                    </div>
                 </div>
-
             </div>
             @endforeach
+
         </div>
     </div>
 
-
-
-    @endforeach
-</div>
 @endsection
