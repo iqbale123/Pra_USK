@@ -44,6 +44,7 @@
                                 class="form-control"
                                 value="{{ date('Y-m-d') }}"
                                 name="tanggal_peminjaman"
+                                disabled
                                 readonly
                               />
                             </div>
