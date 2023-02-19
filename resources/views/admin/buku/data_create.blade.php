@@ -64,6 +64,14 @@
                 <input type="number" class="form-control" id="formGroupExampleInput" placeholder="" name="j_buku_rusak" required >
              </div>
 
+             <div class="col-12 mb-4">
+                <div class="form-group">
+                    <label>Upload Gambar Buku</label>
+                    <input type="file" class="form-control" name="foto"
+                        placeholder="Gambar" />
+                </div>
+            </div>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

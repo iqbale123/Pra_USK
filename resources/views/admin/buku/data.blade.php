@@ -26,6 +26,7 @@
                 <th>Penerbit</th>
                 <th>Buku Baik</th>
                 <th>Buku Rusak</th>
+                {{-- <th>Foto</th> --}}
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -38,6 +39,7 @@
                     <td>{{ $b->penerbit->nama }}</td>
                     <td>{{ $b->j_buku_baik }}</td>
                     <td>{{ $b->j_buku_rusak }}</td>
+                    {{-- <td>{{ $b->foto }}</td> --}}
                     <td>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#update-buku{{ $b->id }}">update</button>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus-buku{{ $b->id }}">delete</button></td>

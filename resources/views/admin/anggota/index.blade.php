@@ -23,7 +23,6 @@
                             <th>Nama Anggota</th>
                             <th>Nama Lengkap</th>
                             <th>Kelas</th>
-                            <th>Foto</th>
                             <th>Alamat </th>
                             <th>Aksi</th>
                         </tr>
