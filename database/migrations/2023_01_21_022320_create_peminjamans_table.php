@@ -15,8 +15,8 @@ class CreatePeminjamansTable extends Migration
     {
         Schema::create('peminjamans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('buku_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('buku_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->date('tanggal_peminjaman');
             $table->date('tanggal_pengembalian')->nullable();
             $table->enum('kondisi_buku_saat_dipinjam', ['baik', 'rusak']);

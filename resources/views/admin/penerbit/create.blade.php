@@ -10,7 +10,7 @@
         <div class="modal-body">
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Kode</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" name="kode" required value="{{ $code }}" disabled readonly>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" name="kode" required value="{{ $code }}" readonly>
              </div>
 
              <div class="mb-3">

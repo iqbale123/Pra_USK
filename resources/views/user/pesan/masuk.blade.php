@@ -46,14 +46,12 @@
                                             </button>
                                         </form>
                                     @else
-                                    {{-- <form action="{{ route('user.delete_pesan', $p->id) }}" method="POST">
-                                        @method=("DELETE")
+                                    <form method="post" action="{{ route('user.pesan.delete', $m->id) }}">
+                                        @method('delete')
                                         @csrf
                                         <button type="submit" class="btn btn-danger">
-                                            <i class="fa-fa-check"></i>
+                                            <i class="bi bi-trash"></i>
                                         </button>
-                                    </form> --}}
-                                    <td><button class="btn btn-danger"><i class="bi bi-trash"></i></button></td>
                                     @endif
                                 </td>
                             </tr>

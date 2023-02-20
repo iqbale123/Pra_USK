@@ -95,7 +95,13 @@
                         <td>{{ $p->isi }}</td>
                         <td>{{ $p->status }}</td>
                         <td>{{ $p->tgl_kirim }}</td>
-                        <td><button class="btn btn-danger"><i class="bi bi-trash"></i></button></td>
+                        <td>
+                            <form method="post" action="{{ route('user.pesan.delete', $p->id) }}">
+                            @method('delete')
+                                @csrf
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                        </form>
+                        </td>
                         {{-- <td><button class="btn btn-success"><i class="bi bi-check-lg"></i></button></td> --}}
                     </tr>
                 @endforeach

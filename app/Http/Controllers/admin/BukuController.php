@@ -96,6 +96,7 @@ class BukuController extends Controller
     {
         $buku = Buku::find($id);
         $buku->delete();
+        
         return redirect()->back();
     }
 }

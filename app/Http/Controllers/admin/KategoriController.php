@@ -100,6 +100,7 @@ class KategoriController extends Controller
     {
         $kategori = kategori::findOrFail($id);
         $kategori->delete();
+        
         return redirect()->back();
 
     }

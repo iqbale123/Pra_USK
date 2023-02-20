@@ -102,6 +102,7 @@ class PenerbitController extends Controller
     {
         $penerbit = penerbit::findOrFail($id);
         $penerbit->delete();
+        
         return redirect()->back();
 
     }
